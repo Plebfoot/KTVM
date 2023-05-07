@@ -24,7 +24,7 @@
         </symbol>
 
     </svg>
-    <div data-aos="zoom-in-up" class="container d-flex align-items-center justify-content-center"
+    <div data-aos="zoom-in-up" id="hero" class="container d-flex align-items-center justify-content-center"
         style="margin-top: 10vh; margin-bottom:100px; max-width:100vw">
         <div class="row justify-content-center py-5">
             <div class="col-lg-1 d-none d-lg-flex align-items-center">

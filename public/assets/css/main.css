@@ -307,7 +307,7 @@ a {
     overflow-x: hidden;
   }
 
-  .container {
+  #hero {
     overflow-x: hidden;
 }
 }
