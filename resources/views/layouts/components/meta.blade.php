@@ -6,13 +6,6 @@
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-QiEjTcGtJ7VU3pJz73OWLP9pJ6woJfo6+G2mJhs7xTj2S2+lbYCXa1+8KXvFJ+To" crossorigin="anonymous">

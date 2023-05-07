@@ -5,6 +5,25 @@
 </head>
 
 @section('content')
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bookmark-star" viewBox="0 0 16 16">
+            <path
+                d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+            <path
+                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+        </symbol>
+
+        <symbol id="grid-fill" viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" />
+        </symbol>
+
+        <symbol id="stars" viewBox="0 0 16 16">
+            <path
+                d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z" />
+        </symbol>
+
+    </svg>
     <div data-aos="zoom-in-up" class="container d-flex align-items-center justify-content-center"
         style="margin-top: 10vh; margin-bottom:100px; max-width:100vw">
         <div class="row justify-content-center py-5">
@@ -38,10 +57,14 @@
             </div>
             <div class="col-lg-4 offset-lg-1">
                 <div class="lc-block my-5">
-                    <a href="#" id="newLink" style="text-decoration: none">
+                    <a href="#" id="newLink" style="text-decoration: none" data-bs-toggle="modal"
+                        data-bs-target="#newItemModal">
                         <span class="alert alert-success rounded-pill px-3 py-1 font-weight-light">Wat is er nieuw?
                             &rarr;</span>
                     </a>
+
+
+
                     <div editable="rich" style="margin-top:10px;">
                         <h2 class="rfs-23">Koninklijke Tielse Vrijwillige Muziekvereniging</h2>
                     </div>
@@ -78,6 +101,55 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="newItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-body p-5">
+                    <h2 class="fw-bold mb-0">Wat is er nieuw?</h2>
+
+                    <ul class="d-grid gap-4 my-5 list-unstyled">
+                        <li class="d-flex gap-4 mb-4">
+                            <svg class="bi text-muted flex-shrink-0" width="48" height="48">
+                                <use xlink:href="#grid-fill" style="fill: gray;" />
+                            </svg>
+                            <div style="margin-left:10px;">
+                                <h5 class="mb-0">Website vernieuwd!</h5>
+                                Ontdek wat er is veranderd.
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4">
+                            <svg class="bi text-warning flex-shrink-0" width="48" height="48">
+                                <use xlink:href="#bookmark-star" style="fill: orange;" />
+                            </svg>
+                            <div style="margin-left:10px;">
+                                <h5 class="mb-0">Nieuws update</h5>
+                                Lees het laatste nieuws van de KTVM
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4 mb-4">
+                            <svg class="bi text-primary flex-shrink-0" width="48" height="48">
+                                <use xlink:href="#stars" style="fill: gold" />
+                            </svg>
+                            <div style="margin-left:10px;">
+                                <h5 class="mb-0">Evenement update</h5>
+                                Mis onze aankomende evenementen niet
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Top,
+                        bedankt!</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <!-- End of Modal -->
+
     <div class="container py-6" style="margin-bottom:110px;">
         <div class="row align-items-center">
             <div class="col-md-6" data-aos="fade-up">
@@ -315,4 +387,3 @@
         </div>
     </div>
 @endsection
-

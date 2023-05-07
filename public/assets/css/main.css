@@ -359,3 +359,7 @@ a {
   transform: scale(1.05);
   transition: transform 0.5s ease;
 }
+
+.modal-sm {
+  max-width: 400px!important;
+}
