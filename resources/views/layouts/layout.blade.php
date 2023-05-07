@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-   @include('layouts.components.meta')
+    @include('layouts.components.meta')
 </head>
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     @include('layouts.components.nav')
 
-    @yield('content')
+    <div class="container.fluid">
+        @yield('content')
+    </div>
 
     @include('layouts.components.footer')
 
@@ -16,4 +18,5 @@
 
 
 @include('layouts.components.js')
+
 </html>
