@@ -1,42 +1,41 @@
- <!-- Navbar sectie -->
- <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid justify-content-between">
-        <a class="navbar-brand" href="/">
-            <span>KTVM</span>
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top" style="background-color: #fff;">
+    <div id="navigation" class="container-fluid d-flex" style="margin-left:150px;margin-right:150px">
+        <a class="navbar-brand me-4" href="#">
+            <span class="ms-2 align-middle">KTVM</span>
         </a>
-        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="bx bx-menu"></i>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: auto;">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        OVER ONS
+                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Over ons
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Het Harmonieorkest</a>
-                        <a class="dropdown-item" href="#">De opmaat</a>
-                        <a class="dropdown-item" href="#">De BBK</a>
-                        <a class="dropdown-item" href="#">Bestuur</a>
-                        <a class="dropdown-item" href="#">Historie</a>
-                        <a class="dropdown-item" href="#">Concertagenda</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="over-ons-dropdown">
+                        <li><a class="dropdown-item" href="#">Onze geschiedenis</a></li>
+                        <li><a class="dropdown-item" href="#">Onze missie</a></li>
+                        <li><a class="dropdown-item" href="#">Ons team</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        DONEER HIER
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="margin-right: 0.5rem;">Nieuws</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle position-static" href="#" id="doneren-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Doneer hier
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Word Sponsor</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="doneren-dropdown">
+                        <li><a class="dropdown-item" href="#">Optie 1</a></li>
+                        <li><a class="dropdown-item" href="#">Optie 2</a></li>
+                        <li><a class="dropdown-item" href="#">Optie 3</a></li>
+                    </ul>
                 </li>
-                <a class="nav-link" href="#">NIEUWS</a>
-                <a class="nav-link" href="/contact">CONTACT</a>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

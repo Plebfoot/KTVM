@@ -73,9 +73,7 @@ body {
   color: #57666f !important;
 }
 
-body {
-  margin-top: 20px;
-}
+
 
 .timeline-steps {
   display: flex;
@@ -152,43 +150,18 @@ body {
 }
 
 
-.navbar-brand img {
-  padding-right: 16px;
-}
-
-.navbar-brand span {
-  font-size: var(--text-medium);
-  font-weight: var(--font-weight-medium);
-  color: var(--dark-brown);
-}
-
-.navbar {
-  padding: 35px 0;
-  margin-right: 100px;
-  margin-left: 100px;
-}
-
-a.nav-link {
-  margin-right: 39px;
-  font-size: var(--text-regular);
-  font-weight: var(--font-weight-regular);
-  color: var(--dark-brown) !important;
-}
-
-.navbar-brand {
-  margin-right: auto;
-  margin-left: 0;
-}
-
-.navbar-toggler {
-  margin-left: auto;
-  margin-right: 0;
-}
 
 .about-img-shape {
   margin: 30px;
   z-index: 1
 }
+
+.navbar {
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 
 .about-img-shape::before {
   position: absolute;
@@ -215,52 +188,17 @@ a.nav-link {
   transition: .5s;
 }
 
-/* Hero Section */
-
-section.hero {
-  margin: 9rem 0;
-  padding-left: 150px;
-  margin-bottom: 200px;
-}
-
-.text-label,
-.text-hero-bold,
-.text-hero-regular {
-  margin: 24px 0;
-}
-
-.text-label {
-  color: var(--primary);
-  font-size: var(--text-regular);
-  font-weight: var(--font-weight-regular);
-  line-height: 31px;
-}
-
-.text-hero-bold {
-  color: var(--dark-brown);
-  font-size: var(--header-1);
-  font-weight: var(--font-weight-bold);
-  line-height: 74px;
-}
-
-.text-hero-regular {
-  color: var(--gray-1);
-  font-size: var(--text-regular);
-  font-weight: var(--font-weight-regular);
-  line-height: 31px;
-}
-
-.hero_image {
-  width: 80%;
-  border-radius: 15px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1) !important;
-}
-
 @media (max-width: 767px) {
   .navbar {
-    padding: 35px 0;
-    margin-right: 50px;
-    margin-left: 50px;
+    height: auto !important;
+    position: static !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #navigation {
+    margin-left:0px!important;
+    margin-right:0px!important;
   }
 
   #oproepForm {
@@ -402,12 +340,6 @@ a {
   font-size: 16px;
 }
 
-@media (max-width: 576px) {
-  .lc-block.card {
-    display: none;
-  }
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -427,4 +359,3 @@ a {
   transform: scale(1.05);
   transition: transform 0.5s ease;
 }
-

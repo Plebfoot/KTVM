@@ -5,24 +5,22 @@
 </head>
 
 @section('content')
-    <div data-aos="zoom-in-up" class="container d-flex align-items-center"
-        style="margin-top: 10vh; margin-bottom:150px; max-width:100vw">
+    <div data-aos="zoom-in-up" class="container d-flex align-items-center justify-content-center"
+        style="margin-top: 10vh; margin-bottom:100px; max-width:100vw">
         <div class="row justify-content-center py-5">
             <div class="col-lg-1 d-none d-lg-flex align-items-center">
                 <div class="lc-block d-flex" style="writing-mode: vertical-rl; transform:rotate(180deg)">
                     <a class="btn btn-link my-2 text-dark text-decoration-none" href="#" role="button">Facebook</a>
-                    <a class="btn btn-link my-4 text-dark text-decoration-none" href="#" role="button">Twitter</a>
+                    <a class="btn btn-link my-4 text-dark text-decoration-none" href="#" role="button">Instagram</a>
                     <a class="btn btn-link my-2 text-dark text-decoration-none" href="#" role="button">Youtube</a>
-                </div><!-- /lc-block -->
+                </div>
             </div>
             <div class="col-sm-6 d-flex d-lg-none flex-sm-column align-items-center justify-content-around mb-4 mb-sm-0">
                 <div class="lc-block">
                     <a class="btn btn-link text-dark text-decoration-none" href="#" role="button">Facebook</a>
-
                 </div>
                 <div class="lc-block">
-                    <a class="btn btn-link text-dark text-decoration-none" href="#" role="button">Twitter</a>
-
+                    <a class="btn btn-link text-dark text-decoration-none" href="#" role="button">Instagram</a>
                 </div>
                 <div class="lc-block">
                     <a class="btn btn-link text-dark text-decoration-none" href="#" role="button">Youtube</a>
