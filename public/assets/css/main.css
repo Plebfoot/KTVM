@@ -302,6 +302,10 @@ a {
   .col {
     margin-bottom: 1rem;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .cta-contact {
