@@ -306,6 +306,10 @@ a {
   html body {
     overflow-x: hidden;
   }
+
+  .container {
+    overflow-x: hidden;
+}
 }
 
 .cta-contact {
