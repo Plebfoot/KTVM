@@ -281,7 +281,7 @@
                 </a>
             </div>
 
-            <div class="col" data-aos="fade-up" data-aos-delay="0">
+            <div class="col" data-aos="fade-up" data-aos-delay="100">
                 <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
                     style="background-image: url('https://ktvm.nl/wp-content/uploads/2022/10/KTVM-harmonieorkest-scaled.jpg'); background-size: cover; background-position: center;">
                     <div class="overlay"></div>
@@ -298,7 +298,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="300">
+            <div class="col" data-aos="fade-up" data-aos-delay="200">
                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                     style="background-color: lightgray;">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
