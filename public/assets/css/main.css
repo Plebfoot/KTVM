@@ -303,7 +303,7 @@ a {
     margin-bottom: 1rem;
   }
 
-  body {
+  html body {
     overflow-x: hidden;
   }
 }
