@@ -330,7 +330,7 @@
             <h2>Het laatste nieuws</h2>
             <p class="text-muted">Hieronder staat een selectie van de laatste nieuwsberichten.</p>
             <a href="/nieuws" style="text-decoration:none; display: inline-block;">
-                <p class="text-muted">Bekijk alle nieuwsberichten<span style="margin-left: 5px;">&rarr;</span></p>
+                <p id="latest_news" class="text-muted">Bekijk alle nieuwsberichten<span style="margin-left: 5px;">&rarr;</span></p>
             </a>
         </div>
 

@@ -21,3 +21,7 @@ Route::get('/contact', function () {
     return view('pages/contact');
 });
 
+Route::get('/bestuur', function () {
+    return view('about/het-bestuur');
+});
+

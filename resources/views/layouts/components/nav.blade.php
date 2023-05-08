@@ -17,7 +17,7 @@
                         <li><a class="dropdown-item" href="#">Her Harmonieorkest</a></li>
                         <li><a class="dropdown-item" href="#">De Opmaat</a></li>
                         <li><a class="dropdown-item" href="#">De BBK</a></li>
-                        <li><a class="dropdown-item" href="#">Het Bestuur</a></li>
+                        <li><a class="dropdown-item" href="/bestuur">Het Bestuur</a></li>
                         <li><a class="dropdown-item" href="#">Onze Historie</a></li>
                         <li><a class="dropdown-item" href="#">Opleidingen</a></li>
                         <li><a class="dropdown-item" href="#">Concertagenda</a></li>

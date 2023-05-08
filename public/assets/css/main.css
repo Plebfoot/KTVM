@@ -400,3 +400,7 @@ a {
   color: #fffefe; /* tekstkleur */
   transition:.3s;
 }
+
+#latest_news:hover {
+  color: #37393b!important;
+}
