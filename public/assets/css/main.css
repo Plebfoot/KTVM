@@ -371,3 +371,32 @@ a {
 .modal-sm {
   max-width: 400px!important;
 }
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #7b7b7b;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+}	
+
+
+
+.dropdown-menu {
+  padding: 0.5rem 0; /* ruimte rondom de items */
+  font-size: 1rem; /* grootte van de tekst */
+  text-align: left; /* uitlijning van de tekst */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* schaduw effect */
+  border-radius: 0.25rem; /* afronding van de hoeken */
+}
+
+.dropdown-item {
+  padding: 0.25rem 1rem; /* ruimte rondom de tekst */
+  font-weight: normal; /* vetgedrukte tekst uitschakelen */
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #d57a1fa4;
+  color: #fffefe; /* tekstkleur */
+  transition:.3s;
+}

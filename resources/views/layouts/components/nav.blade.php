@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top" style="background-color: #fff;">
     <div id="navigation" class="container-fluid d-flex" style="margin-left:150px;margin-right:150px">
-        <a class="navbar-brand me-4" href="#">
+        <a class="navbar-brand me-4" href="/">
             <span class="ms-2 align-middle">KTVM</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -14,22 +14,25 @@
                         Over ons
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="over-ons-dropdown">
-                        <li><a class="dropdown-item" href="#">Onze geschiedenis</a></li>
-                        <li><a class="dropdown-item" href="#">Onze missie</a></li>
-                        <li><a class="dropdown-item" href="#">Ons team</a></li>
+                        <li><a class="dropdown-item" href="#">Her Harmonieorkest</a></li>
+                        <li><a class="dropdown-item" href="#">De Opmaat</a></li>
+                        <li><a class="dropdown-item" href="#">De BBK</a></li>
+                        <li><a class="dropdown-item" href="#">Het Bestuur</a></li>
+                        <li><a class="dropdown-item" href="#">Onze Historie</a></li>
+                        <li><a class="dropdown-item" href="#">Opleidingen</a></li>
+                        <li><a class="dropdown-item" href="#">Concertagenda</a></li>
+
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="margin-right: 0.5rem;">Nieuws</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle position-static" href="#" id="doneren-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Doneer hier
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Doneer hier
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="doneren-dropdown">
-                        <li><a class="dropdown-item" href="#">Optie 1</a></li>
-                        <li><a class="dropdown-item" href="#">Optie 2</a></li>
-                        <li><a class="dropdown-item" href="#">Optie 3</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="over-ons-dropdown">
+                        <li><a class="dropdown-item" href="#">Word sponsor</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
