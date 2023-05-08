@@ -368,6 +368,10 @@ a {
   transition: transform 0.5s ease;
 }
 
+.card-no-hover:hover {
+  transform: none;
+}
+
 .modal-sm {
   max-width: 400px!important;
 }
@@ -403,4 +407,18 @@ a {
 
 #latest_news:hover {
   color: #37393b!important;
+}
+
+.lc-block .position-relative a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5em;
+  height: 5em;
+  fill: currentColor;
+}
+
+#hmo .container {
+    max-width: 1456px!important;
 }

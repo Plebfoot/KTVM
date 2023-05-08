@@ -10,11 +10,12 @@
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav" style="margin-left: auto;">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Over ons
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="over-ons-dropdown">
-                        <li><a class="dropdown-item" href="#">Her Harmonieorkest</a></li>
+                        <li><a class="dropdown-item" href="#">Het Harmonieorkest</a></li>
                         <li><a class="dropdown-item" href="#">De Opmaat</a></li>
                         <li><a class="dropdown-item" href="#">De BBK</a></li>
                         <li><a class="dropdown-item" href="/bestuur">Het Bestuur</a></li>
@@ -28,8 +29,9 @@
                     <a class="nav-link" href="#" style="margin-right: 0.5rem;">Nieuws</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       Doneer hier
+                    <a class="nav-link dropdown-toggle" href="#" id="over-ons-dropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Doneer hier
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="over-ons-dropdown">
                         <li><a class="dropdown-item" href="#">Word sponsor</a></li>
@@ -38,6 +40,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                @if (Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                            {{ __('Log uit') }}
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @endif
             </ul>
         </div>
     </div>

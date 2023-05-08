@@ -25,3 +25,11 @@ Route::get('/bestuur', function () {
     return view('about/het-bestuur');
 });
 
+Route::get('/het-harmonieorkest', function () {
+    return view('about/harmonieorkest');
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
