@@ -13,7 +13,6 @@
     </div>
 
     @include('layouts.components.footer')
-
 </body>
 
 

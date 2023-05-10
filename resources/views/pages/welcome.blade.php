@@ -333,7 +333,6 @@
                 <p id="latest_news" class="text-muted">Bekijk alle nieuwsberichten<span style="margin-left: 5px;">&rarr;</span></p>
             </a>
         </div>
-
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 row-cols-phone">
             <div class="col" data-aos="fade-up" data-aos-delay="0">
                 <a href="/nieuws/nieuws-title" style="text-decoration: none">
@@ -350,7 +349,6 @@
                     </div>
                 </a>
             </div>
-
             <div class="col" data-aos="fade-up" data-aos-delay="100">
                 <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
                     style="background-image: url('https://ktvm.nl/wp-content/uploads/2022/10/KTVM-harmonieorkest-scaled.jpg'); background-size: cover; background-position: center;">
