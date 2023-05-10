@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top" style="background-color: #fff;">
     <div id="navigation" class="container-fluid d-flex" style="margin-left:150px;margin-right:150px">
         <a class="navbar-brand me-4" href="/">
+            <img src="/assets/imgs/logo-zwart.png" style="width:25%;" class="d-inline-block align-middle" alt="KTVM-Logo">
             <span class="ms-2 align-middle">KTVM</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
