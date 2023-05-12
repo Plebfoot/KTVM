@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/welcome');
-});
+// Normal Routes //
+Route::get('/', function () { return view('pages/welcome'); });
+Route::get('/contact', function () { return view('pages/contact'); });
+Route::get('/bestuur', function () { return view('about/het-bestuur'); });
+Route::get('/het-harmonieorkest', function () { return view('about/harmonieorkest'); });
+Route::get('/nieuws', [NewsController::class, 'index'])->name('pages.news.index');
+Route::get('/nieuws/{slug}', [NewsController::class, 'show'])->name('news.show');
 
-Route::get('/contact', function () {
-    return view('pages/contact');
-});
-
-Route::get('/bestuur', function () {
-    return view('about/het-bestuur');
-});
-
-Route::get('/het-harmonieorkest', function () {
-    return view('about/harmonieorkest');
-});
-
-
+/* Auth Routes */
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Nieuws Routes with Autentication. //
+Route::prefix('nieuws')->middleware(['auth'])->group(function () {
+    Route::get('/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/nieuw', [NewsController::class, 'store'])->name('news.store');
+});
