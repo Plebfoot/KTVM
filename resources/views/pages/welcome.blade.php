@@ -71,8 +71,7 @@
                 </div>
                 <div class="lc-block my-5">
                     <div editable="rich">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada
-                            placerat sit amet quis.</p>
+                        <p>Welkom bij de Koninklijke Tielse Vrijwillige Muziekvereniging, een trotse vereniging van gepassioneerde muzikanten uit Tielse gemeente.</p>
                     </div>
                 </div><!-- /lc-block -->
                 <!-- voeg deze code toe -->
@@ -88,10 +87,18 @@
                             </svg>
                         </div><!-- /lc-block -->
                         <div class="lc-block col-lg-6">
-                            <div editable="rich">
-                                <p><strong>29 April</strong>: Agnietenhof, Tiel</p>
-                                <p><strong>Sat – Sun</strong>: 9:00 am – 20:00 pm </p>
-                            </div>
+                            @if ($no_events_text)
+                                <div editable="rich">
+                                    <p style="margin-top:10px"><strong>{{ $no_events_text }}</strong></p>
+                                </div>
+                            @else
+                                @foreach ($events as $event)
+                                    <div editable="rich">
+                                        <p><strong>{{ $event->formatted_date }}</strong>: {{ $event->title }},
+                                            {{ $event->locatie }}</p>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div><!-- /lc-block -->
                         <div class="lc-block col-lg-4 text-lg-end">
                             <a class="btn btn-primary btn-lg" href="#" role="button" lc-helper="button">Bekijk</a>
@@ -246,42 +253,42 @@
         <div class="row">
             <div class="col">
                 <div class="timeline-steps">
-                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="timeline-step">
                         <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
                             title="" data-original-title="1903">
-                            <div class="inner-circle"></div>
+                            <div class="inner-circle" data-aos="fade-up" data-aos-delay="0"></div>
                             <p class="h6 mt-3 mb-1"><br>1903</p>
                             <p class="h6 text-muted mb-0 mb-lg-0">Oprichting KTVM</p>
                         </div>
                     </div>
-                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-step">
                         <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
                             title="" data-original-title="1910">
-                            <div class="inner-circle"></div>
+                            <div class="inner-circle" data-aos="fade-up" data-aos-delay="100"></div>
                             <p class="h6 mt-3 mb-1"><br>1910</p>
                             <p class="h6 text-muted mb-0 mb-lg-0">Naamverandering: T.V.M.</p>
                         </div>
                     </div>
-                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-step">
                         <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
                             title="" data-original-title="1953">
-                            <div class="inner-circle"></div>
+                            <div class="inner-circle" data-aos="fade-up" data-aos-delay="200"></div>
                             <p class="h6 mt-3 mb-1"><br>1953</p>
                             <p class="h6 text-muted mb-0 mb-lg-0">Berkroning Koninklijk</p>
                         </div>
                     </div>
-                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-step">
                         <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
                             title="" data-original-title="2003">
-                            <div class="inner-circle"></div>
+                            <div class="inner-circle" data-aos="fade-up" data-aos-delay="300"></div>
                             <p class="h6 mt-3 mb-1"><br>2003</p>
                             <p class="h6 text-muted mb-0 mb-lg-0">100-jarig bestaan</p>
                         </div>
                     </div>
-                    <div class="timeline-step mb-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-step mb-0">
                         <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
                             title="" data-original-title="<?php date('Y'); ?>">
-                            <div class="inner-circle"></div>
+                            <div class="inner-circle" data-aos="fade-up" data-aos-delay="400"></div>
                             <p class="h6 mt-3 mb-1"><br><?php echo date('Y'); ?></p>
                             <p class="h6 text-muted mb-0 mb-lg-0"><?php $ktvmAge = date('Y') - 1903;
                             echo $ktvmAge . '-jarig bestaan'; ?></p>
@@ -330,58 +337,34 @@
             <h2>Het laatste nieuws</h2>
             <p class="text-muted">Hieronder staat een selectie van de laatste nieuwsberichten.</p>
             <a href="/nieuws" style="text-decoration:none; display: inline-block;">
-                <p id="latest_news" class="text-muted">Bekijk alle nieuwsberichten<span style="margin-left: 5px;">&rarr;</span></p>
+                <p id="latest_news" class="text-muted">Bekijk alle nieuwsberichten<span
+                        style="margin-left: 5px;">&rarr;</span></p>
             </a>
         </div>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 row-cols-phone">
-            <div class="col" data-aos="fade-up" data-aos-delay="0">
-                <a href="/nieuws/nieuws-title" style="text-decoration: none">
-                    <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
-                        style="background-image: url('https://ktvm.nl/wp-content/uploads/2023/05/IMG_3129-rotated.jpg'); background-size: cover;">
-                        <div class="overlay"></div>
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Voorjaarsconcert 2023</h3>
-                            <div class="d-flex flex-column mt-auto">
-                                <small>Bij Webmaster</small>
-                                <small>Geplaatst op 2 mei</small>
+        @php $delay = 0 @endphp
+            @if ($no_news_text)
+                <p>{{ $no_news_text }}</p>
+            @else
+                @foreach ($news as $item)
+                    <div class="col" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+                        <a href="/nieuws/nieuws-title" style="text-decoration: none">
+                            <div class="card card-cover h-113 overflow-hidden rounded-4 shadow-lg"
+                                style="background-image: url('{{ asset('storage/news/' . $item->image) }}'); background-size: cover;">
+                                <div class="overlay"></div>
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ $item->title }}</h3>
+                                    <div class="d-flex flex-column mt-auto">
+                                        <small>Bij {{ $item->user }}</small>
+                                        <small>Geplaatst op {{ $item->formatted_date }}</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="100">
-                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
-                    style="background-image: url('https://ktvm.nl/wp-content/uploads/2022/10/KTVM-harmonieorkest-scaled.jpg'); background-size: cover; background-position: center;">
-                    <div class="overlay"></div>
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">(Aspirant) Muzikanten welkom!</h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="d-flex align-items-center me-3">
-                                <small>Webmaster</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <small>&nbsp 3d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="200">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    style="background-color: lightgray;">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Steun de KTVM!</h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="d-flex align-items-center me-3">
-                                <small>Webmaster</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <small>&nbsp 3d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                    @php $delay += 100 @endphp
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

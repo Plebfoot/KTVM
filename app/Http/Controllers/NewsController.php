@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
@@ -36,6 +37,7 @@ class NewsController extends Controller
         $news = new News();
         $news->title = $request->input('title');
         $news->slug = Str::slug($request->input('title')); // genereer de slug
+        $news->user = Auth::user()->id;
         $news->description = $request->input('description');
 
         if ($request->hasFile('image')) {
