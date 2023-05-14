@@ -29,18 +29,11 @@
 
             <div class="form-group">
                 <label for="image">Afbeelding</label>
-                <input type="file" name="image" id="image"
-                    class="form-control-file @error('image') is-invalid @enderror" onchange="previewImage()">
-                <img id="imagePreview" src="" alt="" style="max-width: 200px; margin-top: 10px;">
+                <input type="file" name="images[]" class="form-control-file @error('images.*') is-invalid @enderror"
+                    multiple required>
                 @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
-
-            <div id="preview" class="mt-3" style="display: none;">
-                <h5>Preview:</h5>
-                <div id="image-preview"></div>
-                <p id="description-preview"></p>
             </div>
 
             <button type="submit" class="btn btn-primary">Opslaan</button>

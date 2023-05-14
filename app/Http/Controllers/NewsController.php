@@ -25,22 +25,33 @@ class NewsController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'image|max:2048|required' //max 2MB
+            'images.*' => 'image|max:2048|required', //max 2MB
         ], [
                 'title.required' => 'De titel is verplicht.',
                 'description.required' => 'De beschrijving is verplicht.',
-                'image.image' => 'Het bestand moet een afbeelding zijn.',
-                'image.required' => 'Het nieuwsbericht moet een afbeelding bevatten.',
-                'image.max' => 'Het bestand mag niet groter zijn dan 2MB.',
+                'images.*.image' => 'Het bestand moet een afbeelding zijn.',
+                'images.*.required' => 'Het nieuwsbericht moet een afbeelding bevatten.',
+                'images.*.max' => 'Het bestand mag niet groter zijn dan 2MB.',
             ]);
+
+        $images = [];
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = uniqid() . '_' . $image->getClientOriginalName();
+                $path = $image->storeAs('public/news', $filename);
+                $images[] = $path;
+            }
+        }
 
         $news = News::create([
             'title' => $validatedData['title'],
             'slug' => Str::slug($validatedData['title']),
             'user' => Auth::user()->name,
             'description' => $validatedData['description'],
-            'image' => $request->hasFile('image') ? $request->file('image')->store('public/news') : null,
+            'images' => $images,
         ]);
+
 
         return redirect()->route('pages.news.index')->with('success', 'Nieuwsbericht is toegevoegd.');
     }
