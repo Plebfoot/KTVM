@@ -71,7 +71,8 @@
                 </div>
                 <div class="lc-block my-5">
                     <div editable="rich">
-                        <p>Welkom bij de Koninklijke Tielse Vrijwillige Muziekvereniging, een trotse vereniging van gepassioneerde muzikanten uit Tielse gemeente.</p>
+                        <p>Welkom bij de Koninklijke Tielse Vrijwillige Muziekvereniging, een trotse vereniging van
+                            gepassioneerde muzikanten uit Tielse gemeente.</p>
                     </div>
                 </div><!-- /lc-block -->
                 <!-- voeg deze code toe -->
@@ -342,9 +343,14 @@
             </a>
         </div>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 row-cols-phone">
-        @php $delay = 0 @endphp
+            @php $delay = 0 @endphp
             @if ($no_news_text)
-                <p>{{ $no_news_text }}</p>
+                <style>
+                    h3.text-center {
+                        text-align: center;
+                    }
+                </style>
+                <h3>{{ $no_news_text }}</h3>
             @else
                 @foreach ($news as $item)
                     <div class="col" data-aos="fade-up" data-aos-delay="{{ $delay }}">
@@ -353,7 +359,7 @@
                                 style="background-image: url('{{ asset('storage/news/' . $item->image) }}'); background-size: cover;">
                                 <div class="overlay"></div>
                                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ $item->title }}</h3>
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ $item->title }}</h3>
                                     <div class="d-flex flex-column mt-auto">
                                         <small>Bij {{ $item->user }}</small>
                                         <small>Geplaatst op {{ $item->formatted_date }}</small>

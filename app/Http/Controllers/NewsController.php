@@ -22,7 +22,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'image' => 'image|max:2048|required' //max 2MB
@@ -34,23 +34,17 @@ class NewsController extends Controller
                 'image.max' => 'Het bestand mag niet groter zijn dan 2MB.',
             ]);
 
-        $news = new News();
-        $news->title = $request->input('title');
-        $news->slug = Str::slug($request->input('title')); // genereer de slug
-        $news->user = Auth::user()->id;
-        $news->description = $request->input('description');
+        $news = News::create([
+            'title' => $validatedData['title'],
+            'slug' => Str::slug($validatedData['title']),
+            'user' => Auth::user()->name,
+            'description' => $validatedData['description'],
+            'image' => $request->hasFile('image') ? $request->file('image')->store('public/news') : null,
+        ]);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/news', $filename);
-            $news->image = $filename;
-        }
-
-        $news->save();
-
-        return redirect()->route('pages.news.index')->with('success', 'News item has been added');
+        return redirect()->route('pages.news.index')->with('success', 'Nieuwsbericht is toegevoegd.');
     }
+
 
     public function show($slug)
     {
