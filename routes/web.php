@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use PHPUnit\TextUI\Configuration\Group;
 
 
 /*
@@ -22,13 +23,27 @@ Route::get('/contact', function () { return view('pages/contact'); });
 Route::get('/bestuur', function () { return view('about/het-bestuur'); });
 Route::get('/het-harmonieorkest', function () { return view('about/harmonieorkest'); });
 Route::get('/onze-historie', function () { return view('about/onze-historie'); });
-
+Route::get('/concertagenda', function () { return view('pages/events/index'); });
 // Controller Routes 
+
 Route::get('/', [EventController::class, 'index']);
+
+
 
 /* Auth Routes */
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Event Routes with Authentication. 
+
+Route::prefix('concertagenda')->middleware(['auth'])->group(function () {
+    Route::get('/create', [EventController::class, 'create'])->name('event.create');
+    Route::post('/nieuw', [EventController::class, 'store'])->name('events.store');
+});
+
+Route::get('/concertagenda', [EventController::class, 'filter'])->name('pages.events.index');
+Route::get('/concertagenda/{slug}', [EventController::class, 'show'])->name('event.show');
+
 
 // Nieuws Routes with Autentication. //
 Route::prefix('nieuws')->middleware(['auth'])->group(function () {

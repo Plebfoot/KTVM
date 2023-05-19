@@ -56,9 +56,6 @@ body {
   background-color: var(--primary-light) !important;
 }
 
-.checked {
-  color: #f5168d;
-}
 
 .bg-danger {
   background-color: var(--primary) !important;
@@ -264,6 +261,12 @@ a {
 
 .btn-primary {
   background-color: #e98d33;
+}
+
+.btn-disabled {
+  background-color: #c56f19;
+  pointer-events: none;
+  color: white;
 }
 
 .btn-primary:focus {
@@ -578,4 +581,49 @@ a {
   .right {
     left: 0%;
   }
+}
+
+.calendar {
+  width: 70px;
+  height: 70px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.calendar-day {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.calendar-month {
+  font-size: 14px;
+}
+
+.event-location {
+  margin-bottom: 0;
+}
+
+.custom-card {
+  margin-bottom: 20px; /* Voeg de gewenste marges toe */
+}
+
+.custom-card:hover {
+  transform: none;
+  transition: none;
+}
+
+.small-form {
+  max-width: 500px; /* Pas dit aan naar de gewenste breedte */
+  margin: 0 auto; /* Optioneel: om het formulier in het midden uit te lijnen */
+}
+
+.display-4 {
+  font-size: 3rem!important;
+  font-weight: 300!important;
+  line-height: 1.2!important;
 }

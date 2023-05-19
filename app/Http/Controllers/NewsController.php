@@ -22,40 +22,35 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'images.*' => 'image|max:2048|required', //max 2MB
+            'image' => 'image|max:2048|required' //max 2MB
         ], [
                 'title.required' => 'De titel is verplicht.',
                 'description.required' => 'De beschrijving is verplicht.',
-                'images.*.image' => 'Het bestand moet een afbeelding zijn.',
-                'images.*.required' => 'Het nieuwsbericht moet een afbeelding bevatten.',
-                'images.*.max' => 'Het bestand mag niet groter zijn dan 2MB.',
+                'image.image' => 'Het bestand moet een afbeelding zijn.',
+                'image.required' => 'Het nieuwsbericht moet een afbeelding bevatten.',
+                'image.max' => 'Het bestand mag niet groter zijn dan 2MB.',
             ]);
 
-        $images = [];
+        $news = new News();
+        $news->title = $request->input('title');
+        $news->slug = Str::slug($request->input('title')); // genereer de slug
+        $news->user = Auth::user()->name;
+        $news->description = $request->input('description');
 
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $filename = uniqid() . '_' . $image->getClientOriginalName();
-                $path = $image->storeAs('public/news', $filename);
-                $images[] = $path;
-            }
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/news', $filename);
+            $news->image = $filename;
         }
 
-        $news = News::create([
-            'title' => $validatedData['title'],
-            'slug' => Str::slug($validatedData['title']),
-            'user' => Auth::user()->name,
-            'description' => $validatedData['description'],
-            'images' => $images,
-        ]);
-
+        $news->save();
 
         return redirect()->route('pages.news.index')->with('success', 'Nieuwsbericht is toegevoegd.');
     }
-
 
     public function show($slug)
     {

@@ -94,15 +94,15 @@
                                 </div>
                             @else
                                 @foreach ($events as $event)
-                                    <div editable="rich">
-                                        <p><strong>{{ $event->formatted_date }}</strong>: {{ $event->title }},
-                                            {{ $event->locatie }}</p>
-                                    </div>
+                                <div editable="rich" class="text-center my-2">
+                                    <p><strong>{{ $event->formatted_date }}</strong>: {{ $event->title }}, {{ $event->locatie }}</p>
+                                </div>
+                                
                                 @endforeach
                             @endif
                         </div><!-- /lc-block -->
                         <div class="lc-block col-lg-4 text-lg-end">
-                            <a class="btn btn-primary btn-lg" href="#" role="button" lc-helper="button">Bekijk</a>
+                            <a class="btn btn-primary btn-lg" href="/concertagenda" role="button" lc-helper="button">Bekijk</a>
                         </div><!-- /lc-block -->
                     </div>
                 </div>
@@ -345,16 +345,11 @@
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 row-cols-phone">
             @php $delay = 0 @endphp
             @if ($no_news_text)
-                <style>
-                    h3.text-center {
-                        text-align: center;
-                    }
-                </style>
-                <h3>{{ $no_news_text }}</h3>
+                <h3 style="margin-left: auto; margin-right: auto;">{{ $no_news_text }}</h3>
             @else
                 @foreach ($news as $item)
                     <div class="col" data-aos="fade-up" data-aos-delay="{{ $delay }}">
-                        <a href="/nieuws/nieuws-title" style="text-decoration: none">
+                        <a href="{{ route('news.show', $item->slug) }}" style="text-decoration: none">
                             <div class="card card-cover h-113 overflow-hidden rounded-4 shadow-lg"
                                 style="background-image: url('{{ asset('storage/news/' . $item->image) }}'); background-size: cover;">
                                 <div class="overlay"></div>

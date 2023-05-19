@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('locatie');
+            $table->text('description');
             $table->dateTime('date');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
