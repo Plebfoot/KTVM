@@ -49,7 +49,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect()->route('pages.news.index')->with('success', 'Nieuwsbericht is toegevoegd.');
+        return redirect()->route('home')->with('success', 'Nieuwsbericht is toegevoegd.');
     }
 
     public function show($slug)
@@ -59,5 +59,38 @@ class NewsController extends Controller
 
         // Geef de nieuws-pagina weer, inclusief de originele titel
         return view('pages.news.show', ['news' => $news, 'originalTitle' => $news->title]);
+    }
+
+    public function destroy($id)
+    {
+        $news = News::findOrFail($id);
+        $news->delete();
+
+        // Optionally, add a success message
+
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $news = News::findOrFail($id);
+    
+        $news->title = $request->input('title');
+        $news->slug = Str::slug($request->input('title'));
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/news', $filename);
+            $news->image = $filename;
+        }
+    
+        if ($request->has('description')) {
+            $news->description = $request->input('description');
+        }
+    
+        $news->save();
+    
+        return redirect()->route('home')->with('success', 'Nieuwsbericht is bijgewerkt.');
     }
 }

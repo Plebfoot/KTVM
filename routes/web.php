@@ -24,9 +24,10 @@ Route::get('/bestuur', function () { return view('about/het-bestuur'); });
 Route::get('/het-harmonieorkest', function () { return view('about/harmonieorkest'); });
 Route::get('/onze-historie', function () { return view('about/onze-historie'); });
 Route::get('/concertagenda', function () { return view('pages/events/index'); });
+
 // Controller Routes 
 
-Route::get('/', [EventController::class, 'index']);
+Route::get('/', [EventController::class, 'welcome']);
 
 
 
@@ -49,8 +50,12 @@ Route::get('/concertagenda/{slug}', [EventController::class, 'show'])->name('eve
 Route::prefix('nieuws')->middleware(['auth'])->group(function () {
     Route::get('/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/nieuw', [NewsController::class, 'store'])->name('news.store');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::put('/{id}', [NewsController::class, 'update'])->name('news.update');
 });
 
 // Nieuws Routes
 Route::get('/nieuws', [NewsController::class, 'index'])->name('pages.news.index');
 Route::get('/nieuws/{slug}', [NewsController::class, 'show'])->name('news.show');
+
+// Delete Routes 

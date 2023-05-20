@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top:130px;margin-bottom:130px;">
+    <div class="container col-lg-9" style="margin-top:130px;margin-bottom:130px;">
         <div class="text-center">
             <h1>Nieuwsitem toevoegen</h1>
         </div>
@@ -29,8 +29,8 @@
 
             <div class="form-group">
                 <label for="image">Afbeelding</label>
-                <input type="file" name="images[]" class="form-control-file @error('images.*') is-invalid @enderror"
-                    multiple required>
+                <input type="file" name="image" id="image"
+                    class="form-control-file @error('image') is-invalid @enderror">
                 @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top:130px;margin-bottom:130px;">
+    <div class="container col-lg-9" style="margin-top:130px;margin-bottom:130px;">
         <div class="text-center">
             <h1>Evenement toevoegen</h1>
         </div>

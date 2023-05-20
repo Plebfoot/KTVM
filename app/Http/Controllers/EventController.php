@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
-    public function index()
+
+    public function index() {
+       
+    }
+    public function welcome()
     {
         $events = Event::where('date', '>=', now()->startOfDay())
             ->orderByRaw("CASE WHEN date < CURDATE() THEN 1 ELSE 0 END, date ASC")

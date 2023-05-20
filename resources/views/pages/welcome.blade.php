@@ -62,9 +62,6 @@
                         <span class="alert alert-success rounded-pill px-3 py-1 font-weight-light">Wat is er nieuw?
                             &rarr;</span>
                     </a>
-
-
-
                     <div editable="rich" style="margin-top:10px;">
                         <h2 class="rfs-23">Koninklijke Tielse Vrijwillige Muziekvereniging</h2>
                     </div>
@@ -79,13 +76,7 @@
                 <div class="lc-block card card-body border-0 bg-white rounded shadow my-5">
                     <div class="row align-items-center text-center g-3">
                         <div class="lc-block col-lg-2 text-lg-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="currentColor"
-                                class="bg-light p-3" viewBox="0 0 16 16" lc-helper="svg-icon">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z">
-                                </path>
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16"> <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/> <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/> </svg>
                         </div><!-- /lc-block -->
                         <div class="lc-block col-lg-6">
                             @if ($no_events_text)
@@ -94,15 +85,16 @@
                                 </div>
                             @else
                                 @foreach ($events as $event)
-                                <div editable="rich" class="text-center my-2">
-                                    <p><strong>{{ $event->formatted_date }}</strong>: {{ $event->title }}, {{ $event->locatie }}</p>
-                                </div>
-                                
+                                    <div editable="rich" class="text-center my-2">
+                                        <p><strong>{{ $event->formatted_date }}</strong>: {{ $event->title }},
+                                            {{ $event->locatie }}</p>
+                                    </div>
                                 @endforeach
                             @endif
                         </div><!-- /lc-block -->
                         <div class="lc-block col-lg-4 text-lg-end">
-                            <a class="btn btn-primary btn-lg" href="/concertagenda" role="button" lc-helper="button">Bekijk</a>
+                            <a class="btn btn-primary btn-lg" href="/concertagenda" role="button"
+                                lc-helper="button">Bekijk</a>
                         </div><!-- /lc-block -->
                     </div>
                 </div>
@@ -152,9 +144,6 @@
                 </div>
             </div>
         </div>
-
-
-    </div>
     </div>
     <!-- End of Modal -->
 
@@ -348,6 +337,8 @@
                 <h3 style="margin-left: auto; margin-right: auto;">{{ $no_news_text }}</h3>
             @else
                 @foreach ($news as $item)
+                    
+
                     <div class="col" data-aos="fade-up" data-aos-delay="{{ $delay }}">
                         <a href="{{ route('news.show', $item->slug) }}" style="text-decoration: none">
                             <div class="card card-cover h-113 overflow-hidden rounded-4 shadow-lg"

@@ -281,6 +281,11 @@ a {
   background-color: #e98d33 !important;
 }
 
+.list-group-item.active {
+  background-color: #e98d33 !important;
+  border-color: #e98d33 !important;
+}
+
 .form-items {
   margin-top: 50px;
   margin-left: 50px;
@@ -609,7 +614,8 @@ a {
 }
 
 .custom-card {
-  margin-bottom: 20px; /* Voeg de gewenste marges toe */
+  margin-bottom: 20px;
+  /* Voeg de gewenste marges toe */
 }
 
 .custom-card:hover {
@@ -618,12 +624,184 @@ a {
 }
 
 .small-form {
-  max-width: 500px; /* Pas dit aan naar de gewenste breedte */
-  margin: 0 auto; /* Optioneel: om het formulier in het midden uit te lijnen */
+  max-width: 500px;
+  /* Pas dit aan naar de gewenste breedte */
+  margin: 0 auto;
+  /* Optioneel: om het formulier in het midden uit te lijnen */
 }
 
 .display-4 {
-  font-size: 3rem!important;
-  font-weight: 300!important;
-  line-height: 1.2!important;
+  font-size: 3rem !important;
+  font-weight: 300 !important;
+  line-height: 1.2 !important;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 80px 0 0;
+  /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.dashboard-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.table-wrapper {
+  width: 100%;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  justify-content: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.table-title {
+  padding-bottom: 10px;
+  margin: 0 0 10px;
+}
+
+.table-title h2 {
+  margin: 6px 0 0;
+  font-size: 22px;
+}
+
+.table-title .add-new {
+  float: right;
+  height: 30px;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: none;
+  min-width: 100px;
+  border-radius: 50px;
+  line-height: 13px;
+}
+
+.table-title .add-new i {
+  margin-right: 4px;
+}
+
+table.table {
+  table-layout: fixed;
+}
+
+table.table tr th,
+table.table tr td {
+  border-color: #e9e9e9;
+}
+
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+table.table th:last-child {
+  width: 100px;
+}
+
+table.table td a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  min-width: 24px;
+}
+
+table.table td a.add {
+  color: #27C46B;
+}
+
+table.table td a.edit {
+  color: #FFC107;
+}
+
+table.table td a.delete {
+  color: #E34724;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #E34724;
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button:hover {
+  color: #ed6242;
+}
+
+table.table td i {
+  font-size: 19px;
+}
+
+table.table td a.add i {
+  font-size: 24px;
+  margin-right: -1px;
+  position: relative;
+  top: 3px;
+}
+
+table.table .form-control {
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+table.table .form-control.error {
+  border-color: #f50000;
+}
+
+table.table td .add {
+  display: none;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.modal-footer {
+  display: inline!important;
+  justify-content: end!important;
 }
