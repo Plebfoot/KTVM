@@ -77,6 +77,7 @@ class NewsController extends Controller
     
         $news->title = $request->input('title');
         $news->slug = Str::slug($request->input('title'));
+        
     
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -85,9 +86,10 @@ class NewsController extends Controller
             $news->image = $filename;
         }
     
-        if ($request->has('description')) {
-            $news->description = $request->input('description');
+        if ($request->has('content')) {
+            $news->description = $request->input('content');
         }
+
     
         $news->save();
     
