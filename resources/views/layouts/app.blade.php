@@ -17,7 +17,7 @@
         use Jenssegers\Agent\Facades\Agent;
     @endphp
 
-    @if (Request::is('dashboard') && Agent::isMobile())
+    @if (Request::is('home') && Agent::isMobile())
         @include('components.mobile-warning')
     @else
         <nav id="sidebar" class="sidebar js-sidebar">
