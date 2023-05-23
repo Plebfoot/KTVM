@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
@@ -19,7 +20,7 @@ use PHPUnit\TextUI\Configuration\Group;
 
 // Normal Routes //
 Route::get('/', function () { return view('pages/welcome'); });
-Route::get('/contact', function () { return view('pages/contact'); });
+Route::get('/contact', function () { return view('pages/contact'); })->name('pages.contact');
 Route::get('/bestuur', function () { return view('about/het-bestuur'); });
 Route::get('/het-harmonieorkest', function () { return view('about/harmonieorkest'); });
 Route::get('/onze-historie', function () { return view('about/onze-historie'); });
@@ -28,7 +29,7 @@ Route::get('/concertagenda', function () { return view('pages/events/index'); })
 // Controller Routes 
 
 Route::get('/', [EventController::class, 'welcome']);
-
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 
 /* Auth Routes */
@@ -58,4 +59,3 @@ Route::prefix('nieuws')->middleware(['auth'])->group(function () {
 Route::get('/nieuws', [NewsController::class, 'index'])->name('pages.news.index');
 Route::get('/nieuws/{slug}', [NewsController::class, 'show'])->name('news.show');
 
-// Delete Routes 
