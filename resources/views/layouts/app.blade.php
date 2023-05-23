@@ -18,7 +18,7 @@
     @endphp
 
     @if (Request::is('home') && Agent::isMobile())
-        @include('components.mobile-warning')
+        @include('layouts.components.mobile-warning')
     @else
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
