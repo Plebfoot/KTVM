@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BestuurController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,7 @@ Route::get('/concertagenda', function () { return view('pages/events/index'); })
 
 Route::get('/', [EventController::class, 'welcome']);
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
-
+Route::get('/bestuur', [BestuurController::class, 'index']);
 
 /* Auth Routes */
 Auth::routes();
