@@ -1,8 +1,5 @@
 @extends('layouts.layout')
 
-<head>
-    <title> KTVM - Koninklijke Tielse Vrijwillige Muziekvereniging</title>
-</head>
 
 @section('content')
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">

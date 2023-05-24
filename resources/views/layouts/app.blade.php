@@ -28,40 +28,30 @@
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        Pages
+                        Pagina's
                     </li>
 
                     <li class="sidebar-item {{ request()->is('home*') ? 'active' : '' }}">
                         <a class="sidebar-link" href="/home">
-                            <i class="align-middle" data-feather="sliders"></i> <span
-                                class="align-middle">Dashboard</span>
+                            <i class="material-icons">dashboard</i> <span
+                            class="align-middle">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item {{ request()->is('nieuws/create') ? 'active' : '' }}">
                         <a class="sidebar-link" href="/nieuws/create">
-                            <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                            <i class="material-icons">add_circle_outline</i> <span
+                                class="align-middle">Nieuwsberichten</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-in.html">
-                            <i class="material-icons me-3">article</i><span>Nieuwsberichten</span>
+                    <li class="sidebar-item {{ request()->is('concertagenda/create') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="/concertagenda/create">
+                            <i class="material-icons me-3">article</i><span>Concertagenda</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-up.html">
-                            <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign
-                                Up</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-blank.html">
-                            <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-                        </a>
-                    </li>
+         
 
                     <li class="sidebar-header">
                         Tools & Components
@@ -103,18 +93,25 @@
                         Plugins & Addons
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="charts-chartjs.html">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span
-                                class="align-middle">Charts</span>
-                        </a>
-                    </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="maps-google.html">
-                            <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+                            <i class="material-icons">settings</i> <span class="align-middle">Instellingen</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#"
+                            onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+
+                            <i class="material-icons">exit_to_app</i></i> <span class="align-middle">Uitloggen</span>
+                        </a>
+                    </li>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
                 </ul>
 
                 <div class="sidebar-cta">

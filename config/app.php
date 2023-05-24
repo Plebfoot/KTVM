@@ -16,6 +16,14 @@ return [
     |
     */
 
+    'page_titles' => [
+        '/' => 'KTVM - Koninklijke Tielse Vrijwillige Muzieksvereniging',
+        'de-opmaat' => 'KTVM - De Opmaat',
+        'bestuur' => 'KTVM - Het Bestuur',
+        'contact' => 'KTVM - Contact',
+        // Voeg hier andere pagina's toe met hun aangepaste titels
+    ],
+
     'name' => env('APP_NAME', 'Laravel'),
 
     /*

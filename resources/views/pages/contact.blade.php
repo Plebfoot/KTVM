@@ -1,8 +1,5 @@
 @extends('layouts.layout')
 
-<head>
-    <title>KTVM - Contact</title>
-</head>
 
 @section('content')
     <div class="form" style="max-width: 60vw; margin: auto;">

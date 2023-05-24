@@ -867,7 +867,6 @@ a.sidebar-link {
   border-left: 3px solid transparent;
   color: rgba(233, 236, 239, .5);
   cursor: pointer;
-  display: block;
   font-weight: 400;
   padding: .625rem 1.625rem;
   position: relative;
@@ -976,32 +975,25 @@ a.sidebar-link svg {
   padding: 1.5rem
 }
 
-.dashboard-content {
-  width: 100vw;
-  direction: ltr;
-  max-width: 100vw;
-  padding: 1.5rem 1.5rem .75rem;
-  width: 100vw
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-@media (min-width:768px) {
-  .dashboard-content {
-    max-width: auto;
-    width: auto
-  }
+.sidebar-link i {
+  margin-right: 5px;
 }
 
 .main {
   width: calc(100% - 260px);
-  justify-content: center;
-  align-items: center;
+  float: right;
   height: 100vh;
   background-color: #F5F9FE;
-  margin-left: 260px;
 }
 
 .mobile-warning {
-  display: none; /* Verberg het waarschuwingsbericht standaard */
+  display: none;
   text-align: center;
   font-size: 18px;
   color: red;
@@ -1009,12 +1001,20 @@ a.sidebar-link svg {
 }
 
 @media only screen and (max-width: 768px) {
+
   /* Media query voor schermen kleiner dan 768px (telefoon) */
   .content {
-      display: none; /* Verberg de inhoud van .content op telefoons */
+    display: none;
+    /* Verberg de inhoud van .content op telefoons */
   }
 
   .mobile-warning {
-      display: block; /* Toon het waarschuwingsbericht op telefoons */
+    display: block;
+    /* Toon het waarschuwingsbericht op telefoons */
   }
+}
+
+
+.sidebar .list-group-item .material-icons {
+  font-size: 1.25rem;
 }
