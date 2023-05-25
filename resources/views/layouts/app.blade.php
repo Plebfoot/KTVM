@@ -22,8 +22,8 @@
     @else
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="/">
-                    <span class="text-center">KTVM</span>
+                <a class="sidebar-brand text-center" href="/">
+                    <span>KTVM</span>
                 </a>
 
                 <ul class="sidebar-nav">
@@ -47,22 +47,22 @@
 
                     <li class="sidebar-item {{ request()->is('concertagenda/create') ? 'active' : '' }}">
                         <a class="sidebar-link" href="/concertagenda/create">
-                            <i class="material-icons me-3">article</i><span>Concertagenda</span>
+                            <i class="material-icons me-3">edit_calendar</i><span>Concertagenda</span>
                         </a>
                     </li>
 
          
 
                     <li class="sidebar-header">
-                        Tools & Components
+                        Pagina's Bewerken
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-buttons.html">
-                            <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+                    <li class="sidebar-item {{ request()->is('bestuur/all') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="/bestuur/all">
+                            <i class="material-icons me-3">groups_3</i><span>Het Bestuur</span>
                         </a>
                     </li>
-
+{{-- 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="ui-forms.html">
                             <i class="align-middle" data-feather="check-square"></i> <span
@@ -87,10 +87,10 @@
                         <a class="sidebar-link" href="icons-feather.html">
                             <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="sidebar-header">
-                        Plugins & Addons
+                        Instellingen
                     </li>
 
 
@@ -116,12 +116,12 @@
 
                 <div class="sidebar-cta">
                     <div class="sidebar-cta-content">
-                        <strong class="d-inline-block mb-2">Upgrade to Pro</strong>
+                        <strong class="d-inline-block mb-2">Ontdek Onze Functies</strong>
                         <div class="mb-3 text-sm">
-                            Are you looking for more components? Check out our premium version.
+                            Wil je ontdekken wat dit dashboard kan? Bekijk onze lijst met functies.
                         </div>
                         <div class="d-grid">
-                            <a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
+                            <a href="features.html" class="btn btn-primary">Bekijk Functies</a>
                         </div>
                     </div>
                 </div>

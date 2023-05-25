@@ -21,7 +21,7 @@
             @foreach ($bestuursleden as $bestuurslid)
                 <div class="col-md-3 text-center py-4">
                     <div class="lc-block"><img alt="" class="rounded-circle mb-3"
-                            src="https://images.unsplash.com/photo-1574698550747-3f839e813107?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=772&amp;q=80"
+                            src="{{ asset('storage/bestuur/' . $bestuurslid->image) }}"
                             style="height:10vh" loading="lazy">
                         <h5 editable="inline"><strong>{{ $bestuurslid->voornaam }} {{ $bestuurslid->achternaam }}</strong></h5>
                         <small editable="inline" class="text-secondary" style="letter-spacing:1px">{{ $bestuurslid->rol }}</small>

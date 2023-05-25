@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bestuur extends Model
 {
     protected $table = 'bestuurpage';
-    protected $fillable = ['naam', 'tussenvoegsel', 'achternaam', 'rol', 'image', 'email'];
+    protected $fillable = ['voornaam', 'achternaam', 'rol', 'image', 'email'];
 
   
 }

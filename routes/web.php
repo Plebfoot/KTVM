@@ -47,6 +47,12 @@ Route::prefix('concertagenda')->middleware(['auth'])->group(function () {
 Route::get('/concertagenda', [EventController::class, 'filter'])->name('pages.events.index');
 Route::get('/concertagenda/{slug}', [EventController::class, 'show'])->name('event.show');
 
+Route::prefix('bestuur')->middleware(['auth'])->group(function() {
+    Route::get('/all', [BestuurController::class, 'all'])->name('bestuur.all');
+    Route::post('/nieuw', [BestuurController::class, 'store'])->name('bestuur.store');
+    Route::delete('/{id}', [BestuurController::class, 'destroy'])->name('bestuur.destroy');
+    Route::put('/{id}', [BestuurController::class, 'update'])->name('bestuur.update');
+});
 
 // Nieuws Routes with Autentication. //
 Route::prefix('nieuws')->middleware(['auth'])->group(function () {
